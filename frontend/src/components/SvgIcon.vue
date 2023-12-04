@@ -31,6 +31,7 @@ const svgClass = computed(() => (props.name ? `svg-icon icon-${props.name}` : 't
   fill: currentColor;
   vertical-align: baseline;
   font-size: v-bind(size)+'px';
+  font-size: 40px;
   color: v-bind(color);
 }
 </style>

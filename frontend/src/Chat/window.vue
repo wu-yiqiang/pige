@@ -11,8 +11,8 @@ import Input  from './input.vue';
 </script>
 <style lang="scss" scoped>
 .Window{
-   width: 75%;
-   height: 100%;
+  width: 75%;
+  height: 100%;
   background-color: $--tabBarColor;
   border-left: 1px solid gray;
   border-radius: 0 $--boder-spacing-3 $--boder-spacing-3 0;

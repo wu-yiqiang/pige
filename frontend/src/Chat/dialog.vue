@@ -15,16 +15,16 @@ import { reactive, watch, computed, ref, onMounted, nextTick } from 'vue'
 import DialogLeft from './dialog-left.vue'
 import DialogRight from './dialog-right.vue'
 import mitter from '../utils/eventBus';
-import { States } from "../store/index"
+import { States } from '../store/index';
 import {dialogs, Dialog} from '../utils/const'
 const store = States()
-let lists = reactive<Dialog>([])
+let lists: Array<Dialog> = reactive([])
 watch([lists], ([lists], [prevLists]) => {
   const ele: Element | null = document.querySelector('.Dialog')
   ele && ele.scrollIntoView({ behavior: "smooth", block: "end" });
 })
 onMounted(() => {
-  lists.push(...dialogs.sort((a, b) => a.time - b.time))
+  lists.push(...(dialogs.sort((a: Dialog, b: Dialog) => a.time - b.time)))
   // mitter.on('transmit', (data: never) => {
   //   lists.push(data)
   // })

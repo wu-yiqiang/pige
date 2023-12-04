@@ -1,7 +1,8 @@
 <template>
   <section class="DialogLeft">
     <div class="avator">
-      <img :src="props.target.img" alt="" />
+      <SvgIcon name="user" size="500" />
+      <!-- <img :src="props.target.img" alt="" /> -->
     </div>
     <div class="main-box">
       <div class="content">{{ props.target.content }}</div>
@@ -13,6 +14,7 @@
 </template>
 <script setup lang="ts">
 import { reactive, watch, computed, ref, onMounted } from "vue";
+import SvgIcon from "../components/SvgIcon.vue";
 const formatDate = (timestamp: any) => {
   var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
         var Y = date.getFullYear() + '-';
@@ -46,18 +48,18 @@ const props = defineProps({
     display: flex;
     position: relative;
     .content {
-      max-width: 40%;
+      max-width: 60%;
       background-color: #1aad19;
       border-radius: 4px;
       margin-left: 10px;
       padding: 5px;
       word-break: break-all;
-      font-size: 16px;
+      font-size: 14px;
       color: #fff;
     }
     .time {
       margin-left: 10px;
-      font-size: 14px;
+      font-size: 12px;
       color: #949393;
     }
     .triangle {

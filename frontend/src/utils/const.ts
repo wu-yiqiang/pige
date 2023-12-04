@@ -2,11 +2,11 @@ export interface Dialog {
   hostName: string
   ip: string
   img: string
-  time: Number
+  time: number
   content: string
 }
 
-export const dialogs: Dialog[] = [
+export const dialogs: Array<Dialog> = [
   {
     hostName: 'mac',
     ip: '192.168.0.12',
@@ -48,5 +48,70 @@ export const dialogs: Dialog[] = [
     img: 'http://e.hiphotos.baidu.com/image/pic/item/a1ec08fa513d2697e542494057fbb2fb4316d81e.jpg',
     time: 1223234534,
     content: 'saduussuu'
+  },
+  {
+    hostName: 'mac',
+    ip: '192.168.0.2',
+    img: 'http://e.hiphotos.baidu.com/image/pic/item/a1ec08fa513d2697e542494057fbb2fb4316d81e.jpg',
+    time: 1223234534,
+    content: 'saduussuu'
+  },
+  {
+    hostName: 'mac',
+    ip: '192.168.0.2',
+    img: 'http://e.hiphotos.baidu.com/image/pic/item/a1ec08fa513d2697e542494057fbb2fb4316d81e.jpg',
+    time: 1223234534,
+    content: 'saduussuu'
+  },
+  {
+    hostName: 'mac',
+    ip: '192.168.0.2',
+    img: 'http://e.hiphotos.baidu.com/image/pic/item/a1ec08fa513d2697e542494057fbb2fb4316d81e.jpg',
+    time: 1223234534,
+    content: 'saduussuu'
+  },
+  {
+    hostName: 'mac',
+    ip: '192.168.0.2',
+    img: 'http://e.hiphotos.baidu.com/image/pic/item/a1ec08fa513d2697e542494057fbb2fb4316d81e.jpg',
+    time: 1223234534,
+    content: 'saduussuu'
+  },
+  {
+    hostName: 'mac',
+    ip: '192.168.0.2',
+    img: 'http://e.hiphotos.baidu.com/image/pic/item/a1ec08fa513d2697e542494057fbb2fb4316d81e.jpg',
+    time: 1223234534,
+    content: 'saduussuu'
+  },
+  {
+    hostName: 'mac',
+    ip: '192.168.0.2',
+    img: 'http://e.hiphotos.baidu.com/image/pic/item/a1ec08fa513d2697e542494057fbb2fb4316d81e.jpg',
+    time: 9223234534,
+    content: '法克斯的分身乏术的是非得失'
   }
 ] 
+export interface User {
+  os: string
+  ip: string
+  hostName: string
+  deviceId: string
+} 
+export const users: Array<User> = [
+  { os: 'mac', ip: '192.168.0.13', hostName: 'atlas', deviceId: '' },
+  { os: 'windows', ip: '192.168.0.112', hostName: 'sutter', deviceId: '' },
+  { os: 'linux', ip: '192.168.0.112', hostName: 'sutter', deviceId: '' },
+  { os: 'unix', ip: '192.168.0.112', hostName: 'sutter', deviceId: '' },
+  { os: 'oos', ip: '192.168.0.112', hostName: 'sutter', deviceId: '' },
+  { os: 'mac', ip: '192.168.0.137', hostName: 's', deviceId: '' },
+  { os: 'windows', ip: '192.168.0.16', hostName: 'sfutter', deviceId: '' },
+  { os: 'linux', ip: '192.168.0.13', hostName: 'sutffater', deviceId: '' },
+  { os: 'unix', ip: '192.168.0.1', hostName: 'sd', deviceId: '' },
+  { os: 'oos', ip: '192.168.0.12', hostName: 'fgh', deviceId: '' },
+  { os: 'oos', ip: '192.168.0.12', hostName: 'fgh', deviceId: '' },
+  { os: 'unix', ip: '192.168.0.112', hostName: 'sutter', deviceId: '' },
+  { os: 'mac', ip: '192.168.0.137', hostName: 's', deviceId: '' },
+  { os: 'windows', ip: '192.168.0.16', hostName: 'sfutter', deviceId: '' },
+  { os: 'linux', ip: '192.168.0.13333', hostName: 'sutffater', deviceId: '' }
+]

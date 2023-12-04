@@ -19,7 +19,10 @@
    </div>
    <div class="input-box">
     <textarea class="textarea" placeholder="请输入..." v-model="inputVal" /> 
-    <div class="submit"> 发送 </div>
+    <div class="btns"> 
+      <div class="clear">清空</div>
+      <div class="submit">发送</div>
+    </div>
    </div>
   </section>
 </template>
@@ -84,14 +87,18 @@ onMounted(() => {
       color: #fff;
       border: none;
     }
-    .submit {
+    .btns {
       position: absolute;
       right: 5px;
       bottom: 5px;
-      padding: 10px;
-      background-color: rgb(0, 136, 255);
-      border-radius: 4px;
-      cursor: pointer;
+      display: flex;
+      .submit, .clear {
+        margin-left: 10px;
+        padding: 8px;
+        background-color: rgb(0, 136, 255);
+        border-radius: 4px;
+        cursor: pointer;
+      }
     }
   }
   

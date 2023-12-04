@@ -56,6 +56,7 @@ const props = defineProps({
       word-break: break-all;
       font-size: 14px;
       color: #fff;
+      text-align: justify;
     }
     .time {
       margin-left: 10px;

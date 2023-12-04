@@ -55,10 +55,11 @@ const props = defineProps({
       word-break: break-all;
       font-size: 14px;
       color: #fff;
+      text-align: justify;
     }
     .time {
       margin-right: 10px;
-      font-size: 14px;
+      font-size: 12px;
       color: #949393;
     }
     .triangle {

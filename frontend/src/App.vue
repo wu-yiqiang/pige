@@ -1,9 +1,9 @@
 <template>
-  <Chat />
+  <Layout />
 </template>
 
 <script lang="ts" setup>
-import Chat from '@/Chat/index.vue'
+import Layout from '@/Layout/index.vue'
 </script>
 
 <style lang="scss">

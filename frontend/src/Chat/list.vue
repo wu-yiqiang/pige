@@ -19,7 +19,5 @@ const lists: Array<User> = reactive(users)
   overflow-y: scroll;
   @include scroll-bar-none();
   border-left: 1px solid rgb(246, 243, 243);
-   width: 25%;
-  height: 100%;
 }
 </style>

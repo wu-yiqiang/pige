@@ -23,7 +23,6 @@
 // 清除滚动条
 @mixin scroll-bar-none {
   scrollbar-width: none;
-
   &::-webkit-scrollbar {
     width: 0;
     height: 0;

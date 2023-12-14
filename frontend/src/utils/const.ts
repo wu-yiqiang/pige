@@ -115,3 +115,15 @@ export const users: Array<User> = [
   { os: 'windows', ip: '192.168.0.16', hostName: 'sfutter', deviceId: '' },
   { os: 'linux', ip: '192.168.0.13333', hostName: 'sutffater', deviceId: '' }
 ]
+
+export interface Menu {
+  icon: string
+  title: string
+}
+
+export const menus: Array<Menu> = [
+  { icon: 'dialog', title: '对话' },
+  { icon: 'user', title: '好友' },
+  { icon: 'group', title: '群组' },
+  { icon: 'settings', title: '设置' },
+]

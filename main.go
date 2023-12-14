@@ -12,6 +12,8 @@ import (
 var assets embed.FS
 
 func main() {
+	// server := service.NewServer("127.0.0.1", 8888)
+	// server.Start()
 	// Create an instance of the app structure
 	app := NewApp()
 

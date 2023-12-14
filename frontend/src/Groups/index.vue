@@ -1,6 +1,6 @@
 <template>
   <section class="Groups">
-   群主界面功能正在开发，敬请期待
+   群主界面功能正在开发，敬请期待dsad萨达萨达萨达达
   </section>
 </template>
 <script lang="ts" setup>

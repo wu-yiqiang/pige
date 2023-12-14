@@ -14,6 +14,6 @@ import Window from './window.vue';
   display: flex;
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  // overflow: hidden;
 }
 </style>

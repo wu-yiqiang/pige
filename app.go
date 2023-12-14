@@ -1,6 +1,7 @@
 package main
 
 import (
+	"changeme/service"
 	"context"
 	"fmt"
 )
@@ -21,7 +22,12 @@ func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
 }
 
-// Greet returns a greeting for the given name
-func (a *App) Greet(name string) string {
-	return fmt.Sprintf("Hello %s, It's show time!", name)
+// 创建ws
+func (a *App) CreateWs() H {
+	err := service.CreateWs()
+	fmt.Println("wsssss sad萨达")
+	if err != nil {
+		return M{"Code": -1, "Data": "", "Msg": ""}
+	}
+	return M{"Code": 200, "Data": "", "Msg": "连接成功"}
 }

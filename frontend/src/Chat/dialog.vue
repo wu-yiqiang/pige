@@ -23,6 +23,7 @@ watch([lists], ([lists], [prevLists]) => {
   const ele: Element | null = document.querySelector('.Dialog')
   ele && ele.scrollIntoView({ behavior: "smooth", block: "end" });
 })
+
 onMounted(() => {
   lists.push(...(dialogs.sort((a: Dialog, b: Dialog) => a.time - b.time)))
   // mitter.on('transmit', (data: never) => {

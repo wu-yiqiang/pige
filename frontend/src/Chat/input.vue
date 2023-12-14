@@ -13,7 +13,7 @@
     <div class="svg-box">
       <SvgIcon name="record" size="50" />
     </div>
-    <div class="svg-box" @click="transmit">
+    <div class="svg-box">
       <SvgIcon name="transmit" size="50" />
     </div>
    </div>
@@ -21,7 +21,7 @@
     <textarea class="textarea" placeholder="请输入..." v-model="inputVal" /> 
     <div class="btns"> 
       <div class="clear">清空</div>
-      <div class="submit">发送</div>
+      <div class="submit" @click="transmit">发送</div>
     </div>
    </div>
   </section>
@@ -30,15 +30,26 @@
 import { reactive, watch, computed, ref, onMounted } from 'vue'
 import SvgIcon from "../components/SvgIcon.vue";
 import mitter from '../utils/eventBus';
+import {CreateWs} from '../api/index'
 let inputVal = ref('')
 const transmit = () => {
-  if (!inputVal.value.length) return
-  let data = {
-    hostName: 'massc', ip: '127.0.0.1', img: 'http://e.hiphotos.baidu.com/image/pic/item/a1ec08fa513d2697e542494057fbb2fb4316d81e.jpg', time: new Date().getTime(), content: inputVal.value
-  }
-  mitter.emit('transmit', data)
-  inputVal.value = ''
+  // if (!inputVal.value.length) return
+  // let data = {
+  //   hostName: 'massc', ip: '127.0.0.1', img: 'http://e.hiphotos.baidu.com/image/pic/item/a1ec08fa513d2697e542494057fbb2fb4316d81e.jpg', time: new Date().getTime(), content: inputVal.value
+  // }
+  // mitter.emit('transmit', data)
+  // inputVal.value = ''
+  
+  CreateWs()
+  const ws = new WebSocket("ws://127.0.0.1:9999/ws")
+  // 定义消息处理函数
+  ws.onmessage = function(event) {
+    console.log('Received message:', event.data);
+  };
+  // 发送消息
+  ws.send('Hello, Server!');
 }
+
 
 function watchKeyEvent() {
   document.addEventListener("keydown", (event) => {

@@ -1,0 +1,12 @@
+<template>
+  <section class="Friends">
+   好友界面功能正在开发，敬请期待dsad萨达萨达萨达达
+  </section>
+</template>
+<script lang="ts" setup>
+import { reactive, watch, computed, ref } from 'vue'
+
+</script>
+<style lang="scss" scoped>
+//.Friends{}
+</style>

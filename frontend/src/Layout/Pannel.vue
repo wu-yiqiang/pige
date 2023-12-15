@@ -14,7 +14,6 @@ const lists: Array<User> = reactive(users)
 <style lang="scss" scoped>
 .List{
   background-color: $--tabBarColor;
-  border-radius: $--boder-spacing-3 0 0 $--boder-spacing-3;
   padding: $--pagePadding;
   overflow: scroll;
   border-left: 1px solid rgb(246, 243, 243);

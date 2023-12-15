@@ -1,15 +1,18 @@
 <template>
-<!--  <Layout />-->
   <section class="Layout">
     <Window />
-    <Pannel />
+    <!-- <router-view></router-view> -->
+    <router-view v-slot="{ Component }">
+        <keep-alive>
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
     <Navbar />
   </section>
 
 </template>
 
 <script lang="ts" setup>
-import Layout from '@/Layout/index.vue'
 import Navbar from '@/Layout/Navbar.vue'
 import Pannel from '@/Layout/Pannel.vue'
 import Window from '@/Chat/window.vue'

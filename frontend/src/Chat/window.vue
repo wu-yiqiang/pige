@@ -13,9 +13,9 @@ import Start  from '@/components/Start.vue';
 </script>
 <style lang="scss" scoped>
 .Window{
-  width: 75%;
+  width: 100%;
   height: 100%;
   background-color: $--tabBarColor;
-  border-left: 1px solid gray;
+  border-right: 1px solid gray;
 }
 </style>

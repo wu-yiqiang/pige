@@ -10,9 +10,12 @@ $--footerbar-logo-height: 60px;
 $--footer-height: calc($--footerbar-height + calc($--footerbar-logo-height / 2));
 $--boder-spacing-3: 3px;
 $--padding-spacing-5: 5px;
+$--pannel-width: 280px;
+$--search-height: 30px;
 // color
 $--text-color: #fff;
 $--pageBackgroundColor: rgb(25, 25, 25);
 $--tabBarColor: rgb(48, 54, 53);
 $--tabBarActiveColor: rgb(56, 71, 69);
 $--input-background-color: $--tabBarActiveColor;
+$--active-bgc-color: #206CCF;

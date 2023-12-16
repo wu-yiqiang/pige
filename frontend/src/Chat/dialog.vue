@@ -1,7 +1,7 @@
 <template>
   <section class="Dialog">
     <div v-for="(item, index) in lists" :key="index" class="item">
-      <div v-if="item.ip === store.$state.settings.ip" class="left-box">
+      <div v-if="item.ip === store.$state.ip" class="left-box">
         <DialogRight :target="item"/>
       </div>
       <div v-else class="right-box">
@@ -15,9 +15,9 @@ import { reactive, watch, computed, ref, onMounted, nextTick } from 'vue'
 import DialogLeft from './dialog-left.vue'
 import DialogRight from './dialog-right.vue'
 import mitter from '../utils/eventBus';
-import { States } from '../store/index';
+import { storeUser } from '../store/user';
 import {dialogs, Dialog} from '../utils/const'
-const store = States()
+const store = storeUser()
 let lists: Array<Dialog> = reactive([])
 watch([lists], ([lists], [prevLists]) => {
   const ele: Element | null = document.querySelector('.Dialog')

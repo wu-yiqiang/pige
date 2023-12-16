@@ -1,42 +1,39 @@
 <template>
-  <section class="Item">
+  <section :class="item.deviceId === currentId ? 'Item Item-selected' : 'Item'" @click="updateSelect(item.deviceId)">
     <div class="info">
-      <SvgIcon
-          :name="imgName"
-          size="50"
-        />
-        &nbsp;&nbsp;
+      <div class="left-box">
+        <img :src="item.img" alt="" />
+      </div>
+      <div class="right-box">
         <div class="hostname">{{ item.hostName }}</div>
-        &nbsp;
-        <div class="ip">({{item.ip}})</div>
+        <div class="ip">{{ item.ip }}</div>
+      </div>
     </div>
   </section>
 </template>
 <script lang="ts" setup>
-import { reactive, watch, computed, ref, onMounted } from 'vue'
-import SvgIcon from "../components/SvgIcon.vue";
+import { reactive, watch, computed, ref, onMounted, defineEmits } from 'vue'
+const emit = defineEmits(['updateSelect'])
 let imgName = ref('mac')
 const props = defineProps({
   item: {
     require: true,
     type: Object,
-    default: {},
+    default: {}
+  },
+  currentId: {
+    require: true,
+    type: String,
+    default: ''
   }
 })
-function initOs() {
-  if (props.item.os === 'mac') return imgName.value = 'mac' 
-  if (props.item.os === 'linux') return imgName.value = 'linux' 
-  if (props.item.os === 'windows') return imgName.value = 'windows' 
-  if (props.item.os === 'unix') return imgName.value = 'unix' 
-  return imgName.value = 'oos' 
+const updateSelect = (value: any) => {
+  emit('updateSelect', value)
 }
-onMounted(() => {
-  initOs()
-})
 </script>
 <style lang="scss" scoped>
-.Item{
-  border: 1px solid gray;
+.Item {
+  // border: 1px solid gray;
   border-radius: $--boder-spacing-3;
   padding: $--padding-spacing-5;
   margin: $--padding-spacing-5;
@@ -44,12 +41,32 @@ onMounted(() => {
   .info {
     display: flex;
     align-items: center;
-    .hostname {
-      font-size: 16px;
+    justify-content: flex-start;
+    
+    .left-box {
+      @include box-center;
+      img {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+      }
     }
-    .ip {
-      font-size: 14px;
+    .right-box {
+      margin-left: 15px;
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
+      .hostname {
+        font-size: 16px;
+      }
+      .ip {
+        font-size: 14px;
+      }
     }
   }
+}
+.Item-selected {
+  background-color: $--active-bgc-color;
+  color: #fff;
 }
 </style>

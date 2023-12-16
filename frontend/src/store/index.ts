@@ -1,25 +1,31 @@
 import { defineStore } from 'pinia'
-import * as Pinia from "pinia";
-export const pinia = Pinia.createPinia();
-export const States = defineStore("States", {
-  state: () => {
+export interface RouterInfo {
+  path: string
+  fullWidth: any
+  icon: any
+  title: any
+}
+
+export const storeRouter = defineStore('storeRouter', {
+  state: () =>  {
     return {
-      settings: {
-        saveDir: "/download",
-        hostName: "hostname",
-        ip: "127.0.0.1",
-        port: 12,
-      },
-    };
+      path: '',
+      fullWidth: false,
+      icon: '',
+      title: ''
+    }
   },
-  getters: {
-    // getIp() {
-    //   return this.settings.ip
-    // }
-  },
+  getters: {},
   actions: {
-    // updateSettings(value: string) {
-    //   this.settings = value
-    // }
+    setRouterInfo(value: RouterInfo) {
+      this.path = value.path
+      this.fullWidth = value.fullWidth
+      this.icon = value.icon
+      this.title = value.title
+    },
   },
-});
+  // persist: {
+  //   //数据持久化
+  //   enabled: true
+  // }
+})

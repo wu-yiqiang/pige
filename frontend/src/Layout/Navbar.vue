@@ -90,10 +90,10 @@ const handleSelect = (value: object) => {
         }
       }
       svg {
-        color: #206CCF;
+        color: $--active-bgc-color;
       }
       .menu-title {
-        color: #206CCF;
+        color: $--active-bgc-color;
       }
     }
   }

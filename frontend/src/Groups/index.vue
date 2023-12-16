@@ -8,5 +8,7 @@ import { reactive, watch, computed, ref } from 'vue'
 
 </script>
 <style lang="scss" scoped>
-//.Groups{}
+.Groups{
+  width: $--pannel-width;
+}
 </style>

@@ -5,7 +5,8 @@ export interface Dialog {
   time: number
   content: string
 }
-
+import sads from '../assets/images/user.jpg'
+const str = sads
 export const dialogs: Array<Dialog> = [
   {
     hostName: 'mac',
@@ -97,21 +98,22 @@ export interface User {
   ip: string
   hostName: string
   deviceId: string
+  img: string
 } 
 export const users: Array<User> = [
-  { os: 'mac', ip: '192.168.0.13', hostName: 'atlas', deviceId: '' },
-  { os: 'windows', ip: '192.168.0.112', hostName: 'sutter', deviceId: '' },
-  { os: 'linux', ip: '192.168.0.112', hostName: 'sutter', deviceId: '' },
-  { os: 'unix', ip: '192.168.0.112', hostName: 'sutter', deviceId: '' },
-  { os: 'oos', ip: '192.168.0.112', hostName: 'sutter', deviceId: '' },
-  { os: 'mac', ip: '192.168.0.137', hostName: 's', deviceId: '' },
-  { os: 'windows', ip: '192.168.0.16', hostName: 'sfutter', deviceId: '' },
-  { os: 'linux', ip: '192.168.0.13', hostName: 'sutffater', deviceId: '' },
-  { os: 'unix', ip: '192.168.0.1', hostName: 'sd', deviceId: '' },
-  { os: 'oos', ip: '192.168.0.12', hostName: 'fgh', deviceId: '' },
-  { os: 'oos', ip: '192.168.0.12', hostName: 'fgh', deviceId: '' },
-  { os: 'unix', ip: '192.168.0.112', hostName: 'sutter', deviceId: '' },
-  { os: 'mac', ip: '192.168.0.137', hostName: 's', deviceId: '' },
-  { os: 'windows', ip: '192.168.0.16', hostName: 'sfutter', deviceId: '' },
-  { os: 'linux', ip: '192.168.0.13333', hostName: 'sutffater', deviceId: '' }
+  { os: 'mac', ip: '192.168.0.13', hostName: '萨达撒萨达', deviceId: '1', img: str },
+  { os: 'windows', ip: '192.168.0.112', hostName: 'sutter', deviceId: '2', img: str },
+  { os: 'linux', ip: '192.168.0.112', hostName: 'sutter', deviceId: '3', img: str },
+  { os: 'unix', ip: '192.168.0.112', hostName: 'sutter', deviceId: '4', img: str },
+  { os: 'oos', ip: '192.168.0.112', hostName: 'sutter', deviceId: '5', img: str },
+  { os: 'mac', ip: '192.168.0.137', hostName: 's', deviceId: '6', img: str },
+  { os: 'windows', ip: '192.168.0.16', hostName: 'sfutter', deviceId: '7', img: str },
+  { os: 'linux', ip: '192.168.0.13', hostName: 'sutffater', deviceId: '8', img: str },
+  { os: 'unix', ip: '192.168.0.1', hostName: 'sd', deviceId: '9', img: str },
+  { os: 'oos', ip: '192.168.0.12', hostName: 'fgh', deviceId: '10', img: str },
+  { os: 'oos', ip: '192.168.0.12', hostName: 'fgh', deviceId: '11', img: str },
+  { os: 'unix', ip: '192.168.0.112', hostName: 'sutter', deviceId: '12', img: str },
+  { os: 'mac', ip: '192.168.0.137', hostName: 's', deviceId: '13', img: str },
+  { os: 'windows', ip: '192.168.0.16', hostName: 'sfutter', deviceId: '14', img: str },
+  { os: 'linux', ip: '192.168.0.13333', hostName: 'sutffater', deviceId: '15', img: str }
 ]

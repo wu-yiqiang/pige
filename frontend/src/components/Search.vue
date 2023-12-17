@@ -1,15 +1,14 @@
 <template>
   <section class="Search">
-   <input type="text" placeholder="搜索" :value="value" @input="filterStr">
+   <input type="text" placeholder="搜索(可输入ip、用户名)" v-model="valueData" @input="filterStr">
   </section>
 </template>
 <script lang="ts" setup>
 import { reactive, watch, computed, ref, defineEmits } from 'vue'
-const value = ref('')
+const valueData = ref('')
 const emit = defineEmits(['filter'])
 const filterStr = () => {
-  console.log('value', value)
-  emit('filter', value.value)
+  emit('filter', valueData.value)
 }
 </script>
 <style lang="scss" scoped>

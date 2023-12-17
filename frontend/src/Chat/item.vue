@@ -1,5 +1,5 @@
 <template>
-  <section :class="item.deviceId === currentId ? 'Item Item-selected' : 'Item'" @click="updateSelect(item.deviceId)">
+  <section :class="item.deviceId === currentId ? 'Item Item-selected' : 'Item'" @click="updateSelect(item)">
     <div class="info">
       <div class="left-box">
         <img :src="item.img" alt="" />
@@ -38,6 +38,7 @@ const updateSelect = (value: any) => {
   padding: $--padding-spacing-5;
   margin: $--padding-spacing-5;
   cursor: pointer;
+  color: #fff;
   .info {
     display: flex;
     align-items: center;
@@ -67,6 +68,6 @@ const updateSelect = (value: any) => {
 }
 .Item-selected {
   background-color: $--active-bgc-color;
-  color: #fff;
+  
 }
 </style>

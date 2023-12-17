@@ -85,18 +85,20 @@ onMounted(() => {
     height: 70%;
     border: 1px solid gray;
     border-radius: 3px;
-    padding: 5px;
+    padding: 10px;
     position: relative;
     .textarea {
       height: 100%;
+      width: 100%;
       overflow-y: scroll;
-      @include scroll-bar-none();
+      @include scroll-bar-none;
       outline: none;
       font-size: 14px;
       line-height: 1;
       background-color: $--tabBarColor;
       color: #fff;
       border: none;
+      overflow-wrap: break-word;
     }
     .btns {
       position: absolute;
@@ -105,10 +107,12 @@ onMounted(() => {
       display: flex;
       .submit, .clear {
         margin-left: 10px;
-        padding: 8px;
+        padding: 5px;
         background-color: rgb(0, 136, 255);
         border-radius: 4px;
         cursor: pointer;
+        font-size: 14px;
+        color: #fff;
       }
     }
   }

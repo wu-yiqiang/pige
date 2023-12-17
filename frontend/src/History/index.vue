@@ -3,40 +3,50 @@
     <Search @filter="handleFilter"/>
     <div class="list">
       <div v-for="(item, index) in lists" :key="index">
-        <Item :item="item" />
+        <Item :item="item" :currentId="currentId" @updateSelect="handleFriend"/>
       </div>
     </div>
   </section>
   
 </template>
 <script lang="ts" setup>
-import { reactive, watch, computed, ref } from 'vue'
+import { reactive, watch, computed, ref, onMounted } from 'vue'
 import Item from '@/chat/item.vue'
 import Search from '@/components/Search.vue'
-import {User, users} from '../utils/const'
-let lists: Array<User> = reactive(users)
+import { User, users } from '../utils/const'
+import { storeDialog } from '../store/dialog'
+const store = storeDialog()
+let lists: Array<User> = reactive([])
+let currentId = ref('')
+const handleFriend = (value: any) => {
+  currentId.value = value.deviceId
+  store.setDialogInfo(value)
+}
 const handleFilter = (value: any) => {
-  if (!value) lists= [...users]
-  const li = lists.filter((list) => {
+  lists.length = 0
+  if (!value) return lists.push(...users)
+  const li = users.filter((list: any) => {
     const ip = list.ip;
     const hostName = list.hostName
     const regex = new RegExp(`${value}`, 'gi');;
-    const isIp = regex.test(ip);
-    const isHostName = regex.test(hostName)
-    console.log('sssss', isIp,ip, isHostName, hostName , value)
-    if (!isIp && !isHostName) {
-      return false
-    } else {
-      return true
-    }
+    const isExist = regex.test(ip) || regex.test(hostName);
+    if (!isExist) return false
+    return true
   })
-  lists = [...li]
+  lists.push(...li)
 }
+const init = () => {
+  lists.length = 0
+  lists.push(...users)
+}
+onMounted(() => {
+  init()
+})
 </script>
 <style lang="scss" scoped>
 .History{
   width: $--pannel-width;
-  background-color: $--tabBarColor;
+  background-color: $--pageBackgroundColor;
   padding: $--pagePadding;
   position: relative;
   overflow: hidden;

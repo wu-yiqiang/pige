@@ -1,16 +1,21 @@
 <template>
   <section class="Start">
-   开始页面
+   <SvgIcon name="link" />
   </section>
 </template>
 <script lang="ts" setup>
-import { reactive, watch, computed, ref } from 'vue'
-
+import SvgIcon from "../components/SvgIcon.vue";
 </script>
+
 <style lang="scss" scoped>
 .Start{
   height: 100%;
   width: 100%;
-  background-color: red;
+  background-color: $--pageBackgroundColor;
+  color: #fff;
+  @include box-center;
+  svg {
+    font-size: 150px;
+  }
 }
 </style>

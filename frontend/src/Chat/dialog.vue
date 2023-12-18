@@ -20,15 +20,24 @@ import {dialogs, Dialog} from '../utils/const'
 const store = storeUser()
 let lists: Array<Dialog> = reactive([])
 watch([lists], ([lists], [prevLists]) => {
-  const ele: Element | null = document.querySelector('.Dialog')
-  ele && ele.scrollIntoView({ behavior: "smooth", block: "end" });
+   nextTick(() => {
+    scrollBottom()
+  })
 })
+
+function scrollBottom() {
+  const ele: Element | null = document.querySelector('.Dialog')
+  ele && ele.scrollTo( 0, ele.scrollHeight );
+}
 
 onMounted(() => {
   lists.push(...(dialogs.sort((a: Dialog, b: Dialog) => a.time - b.time)))
-  // mitter.on('transmit', (data: never) => {
-  //   lists.push(data)
-  // })
+  mitter.on('transmit', (data: any) => {
+    lists.push(data)
+  })
+  nextTick(() => {
+    scrollBottom()
+  })
 })
 </script>
 <style lang="scss" scoped>

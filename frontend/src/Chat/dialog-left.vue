@@ -47,15 +47,17 @@ const props = defineProps({
   .main-box {
     display: flex;
     position: relative;
+    justify-content: flex-start;
     .content {
       max-width: 60%;
       background-color: #1aad19;
       border-radius: 4px;
       margin-left: 10px;
-      padding: 5px;
+      padding: 10px;
       word-break: break-all;
       font-size: 14px;
       color: #fff;
+      @include box-align-center;
       text-align: justify;
     }
     .time {

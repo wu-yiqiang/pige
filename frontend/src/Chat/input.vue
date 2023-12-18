@@ -1,19 +1,19 @@
 <template>
   <section class="Input">
    <div class="tool-bar">
-    <div class="svg-box">
+    <div class="svg-box" @click="handleVoice">
       <SvgIcon name="voice" />
     </div>
-    <div class="svg-box">
+    <div class="svg-box" @click="handleFold">
       <SvgIcon name="fold" />
     </div>
-    <div class="svg-box">
+    <div class="svg-box" @click="handleFile">
       <SvgIcon name="file" />
     </div>
-    <div class="svg-box">
+    <div class="svg-box" @click="handleRecord">
       <SvgIcon name="record" />
     </div>
-    <div class="svg-box">
+    <div class="svg-box" @click="handleTransmit">
       <SvgIcon name="transmit" />
     </div>
    </div>
@@ -37,6 +37,7 @@ const handleSubmit = () => {
   let data = {
     hostName: 'massc', ip: '127.0.0.1', img: 'http://e.hiphotos.baidu.com/image/pic/item/a1ec08fa513d2697e542494057fbb2fb4316d81e.jpg', time: new Date().getTime(), content: inputVal.value
   }
+  console.log('sssss', data)
   mitter.emit('transmit', data)
   inputVal.value = ''
 }
@@ -48,6 +49,26 @@ function watchKeyEvent() {
       handleSubmit()
     }
   })
+}
+
+function handleVoice() {
+  alert('该功能还未开发，敬请期待')
+}
+
+function handleFold() {
+  alert('该功能还未开发，敬请期待')
+}
+
+function handleFile() {
+  alert('该功能还未开发，敬请期待')
+}
+
+function handleRecord() {
+  alert('该功能还未开发，敬请期待')
+}
+
+function handleTransmit() {
+  alert('该功能还未开发，敬请期待')
 }
 
 function handleClear() {

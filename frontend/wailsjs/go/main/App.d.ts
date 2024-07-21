@@ -3,3 +3,5 @@
 import {main} from '../models';
 
 export function CreateWs():Promise<main.H>;
+
+export function GetDevices():Promise<main.H>;

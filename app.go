@@ -2,6 +2,7 @@ package main
 
 import (
 	"changeme/service"
+	utils2 "changeme/utils"
 	"context"
 	"fmt"
 )
@@ -30,4 +31,13 @@ func (a *App) CreateWs() H {
 		return M{"Code": -1, "Data": "", "Msg": ""}
 	}
 	return M{"Code": 200, "Data": "", "Msg": "连接成功"}
+}
+
+func (a *App) GetDevices() H {
+	var data1, data2, err = utils2.ExternalIP()
+	if err != nil {
+		return M{"Code": -1, "Data": "", "Msg": "获取局域网设备失败"}
+	}
+	fmt.Println("asda", data1, data2)
+	return M{"Code": 200, "Data": "", "Msg": "成功"}
 }

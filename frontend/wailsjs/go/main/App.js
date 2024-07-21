@@ -5,3 +5,7 @@
 export function CreateWs() {
   return window['go']['main']['App']['CreateWs']();
 }
+
+export function GetDevices() {
+  return window['go']['main']['App']['GetDevices']();
+}

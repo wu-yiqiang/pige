@@ -5,9 +5,9 @@
         <Dialog />
         <Input />
       </div>
-      <div class="info">
+      <!-- <div class="info">
         <UserInfo />
-      </div>
+      </div> -->
     </div>
     <Start v-if="!isDialog"/>
   </section>
@@ -35,14 +35,8 @@ return store.deviceId
     width: 100%;
     height: 100%;
     .dialog {
-      width: 70%;
+      width: 100%;
       height: 100%;
-    }
-    .info {
-      width: 30%;
-      height: 100%;
-      border-left: 1px solid gray;
-      overflow: scroll;
     }
   }
 }

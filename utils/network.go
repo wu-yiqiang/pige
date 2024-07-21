@@ -2,11 +2,34 @@ package utils
 
 import (
 	"errors"
+	"fmt"
 	"github.com/j-keck/arping"
 	"net"
 	"time"
 )
 
+func getCurrentIp() {
+	interfaces, err := net.Interfaces()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	for _, iface := range interfaces {
+		addrs, err := iface.Addrs()
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
+		for _, addr := range addrs {
+			ip, _, err := net.ParseCIDR(addr.String())
+			if err != nil {
+				fmt.Println(err)
+				continue
+			}
+			fmt.Println(ip)
+		}
+	}
+}
 func ExternalIP() (string, string, error) {
 	ifaces, err := net.Interfaces()
 	if err != nil {

@@ -1,6 +1,6 @@
 <template>
   <section class="Search">
-   <input type="text" placeholder="搜索(可输入ip、用户名)" v-model="valueData" @input="filterStr">
+   <input type="text" placeholder="搜索(可输入ip、用户名、群主名)" v-model="valueData" @input="filterStr">
   </section>
 </template>
 <script lang="ts" setup>

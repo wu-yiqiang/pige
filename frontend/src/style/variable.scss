@@ -10,11 +10,12 @@ $--footerbar-logo-height: 60px;
 $--footer-height: calc($--footerbar-height + calc($--footerbar-logo-height / 2));
 $--boder-spacing-3: 3px;
 $--padding-spacing-5: 5px;
-$--pannel-width: 280px;
+$--pannel-width: 320px;
 $--search-height: 30px;
 // color
 $--text-color: #fff;
 $--pageBackgroundColor: rgb(25, 25, 25);
+// $--pageBackgroundColor: rgb(255, 255, 255);
 $--tabBarColor: rgb(44, 44, 44);
 $--tabBarActiveColor: rgb(183, 186, 186);
 $--input-background-color: $--tabBarActiveColor;

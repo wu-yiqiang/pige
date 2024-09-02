@@ -1,7 +1,7 @@
 <template>
   <section class="Friends">
     <Search @filter="handleFilter"/>
-    <div class="tab">
+    <!-- <div class="tab">
       <div class="dialog">
         <SvgIcon name="dialog" />
       </div>
@@ -11,7 +11,7 @@
       <div class="group">
         <SvgIcon name="group" />
       </div>
-    </div>
+    </div> -->
     <div class="list">
       <div v-for="(item, index) in lists" :key="index" >
         <Item :item="item"  :currentId="currentId" @updateSelect="handleFriend"/>

@@ -16,10 +16,18 @@ import Navbar from '@/Layout/Navbar.vue'
 import Pannel from '@/Layout/Pannel.vue'
 import Window from '@/Chat/window.vue'
 import { storeRouter } from './store/index';
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 const store = storeRouter()
+import { GetDevices } from '../wailsjs/go/main/App'
+const getDeviceLists = async () => {
+  const data = await GetDevices()
+  console.log("a萨达身上das", data)
+}
 const isFullWidth = computed(() => {
 return store.fullWidth
+})
+onMounted(() => {
+  getDeviceLists()
 })
 </script>
 

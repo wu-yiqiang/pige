@@ -3,6 +3,7 @@
     <div v-for="(item, index) in lists" :key="index">
       <Item :item="item" />
     </div>
+    ada啊大叔
   </section>
 </template>
 <script lang="ts" setup>
@@ -13,12 +14,9 @@ import { GetDevices } from '../../wailsjs/go/main/App'
 const lists: Array<User> = reactive(users)
 const getDeviceLists = async () => {
   const data = await GetDevices()
-  console.log("asdas", data)
+  console.log("a萨达身上das", data)
 }
 onMounted(
-    () => {
-      
-    }
 )
 </script>
 <style lang="scss" scoped>

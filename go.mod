@@ -6,7 +6,6 @@ toolchain go1.22.4
 
 require (
 	github.com/gorilla/websocket v1.5.1
-	github.com/j-keck/arping v1.0.3
 	github.com/wailsapp/wails/v2 v2.9.1
 )
 

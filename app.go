@@ -34,10 +34,10 @@ func (a *App) CreateWs() H {
 }
 
 func (a *App) GetDevices() H {
-	var data1, data2, err = utils2.ExternalIP()
-	if err != nil {
-		return M{"Code": -1, "Data": "", "Msg": "获取局域网设备失败"}
-	}
-	fmt.Println("asda", data1, data2)
+	utils2.GetLocalNetworkDevicesIP()
+	// if err != nil {
+	// 	return M{"Code": -1, "Data": "", "Msg": "获取局域网设备失败"}
+	// }
+	// fmt.Println("asda", data1, data2)
 	return M{"Code": 200, "Data": "", "Msg": "成功"}
 }

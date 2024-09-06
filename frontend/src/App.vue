@@ -16,7 +16,7 @@ import Navbar from '@/Layout/Navbar.vue'
 import Pannel from '@/Layout/Pannel.vue'
 import Window from '@/Chat/window.vue'
 import { storeRouter } from './store/index';
-import { computed, onMounted } from 'vue';
+import { computed, onActivated, onMounted } from 'vue';
 import { GetDevices } from '../wailsjs/go/main/App'
 const store = storeRouter()
 const getDeviceLists = async () => {

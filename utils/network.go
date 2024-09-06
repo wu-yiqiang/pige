@@ -1,46 +1,52 @@
 package utils
 
 import (
- "fmt"
- "net"
- "os"
- "sync"
- "time"
+	_"errors"
+	"fmt"
+	"net"
+	"os"
+	"sync"
+	"time"
 )
 
 // Function to perform a ping scan on an IP address
-func scanIP(ip string, wg *sync.WaitGroup) {
-   defer wg.Done()
+func scanIP(ip string, wg *sync.WaitGroup, chann chan string) {
+	defer wg.Done()
 
-   conn, err := net.DialTimeout("ip4:icmp", ip, time.Second*1)
-   if err != nil {
-      fmt.Printf("Failed to ping IP %s: %v\n", ip, err)
-    return
- }
-   defer conn.Close()
+	conn, err := net.DialTimeout("ip4:icmp", ip, time.Second*1)
+	if err != nil {
+		fmt.Printf("Failed to ping IP %s: %v\n", ip, err)
+		return
+	}
+	defer conn.Close()
 
-   fmt.Printf("IP %s is up\n", ip)
+	chann <- ip
 }
 
-func GetLocalNetworkDevicesIP() {
-   var wg sync.WaitGroup
+func GetLocalNetworkDevicesIP() ([]string, error) {
+	var wg sync.WaitGroup
+	channel := make(chan string, 255)
+	ips := []string{}
+	defer close(channel)
+	// Identify the local network IP range (adjust based on your network)
+	localIP := "192.168.1." // Example local network range
+	startIP := 1
+	endIP := 254
+	fmt.Println("d阿斯顿撒", os.Geteuid())
+	if os.Geteuid() != 0 {
+		err := errors.New("Warning: Running without root privileges may prevent pinging.")
+		return ips, err
+	}
 
-   // Identify the local network IP range (adjust based on your network)
-   localIP := "192.168.1." // Example local network range
-   startIP := 1
-   endIP := 254
-
-   // Check if the program is running with the necessary privileges
-   if os.Geteuid() != 0 {
-    fmt.Println("Warning: Running without root privileges may prevent pinging.")
- }
-
-   for i := startIP; i <= endIP; i++ {
-    ip := fmt.Sprintf("%s%d", localIP, i)
-    wg.Add(1)
-    go scanIP(ip, &wg)
- }
-
-   wg.Wait()
-   fmt.Println("Scan complete")
+	for i := startIP; i <= endIP; i++ {
+		ip := fmt.Sprintf("%s%d", localIP, i)
+		wg.Add(1)
+		go scanIP(ip, &wg, channel)
+	}
+	wg.Wait()
+	for data := range channel {
+		ips = append(ips, data)
+		// fmt.Println("d阿斯顿撒", data)
+	}
+	return ips, nil
 }
